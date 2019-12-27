@@ -1,0 +1,55 @@
+<ion-view view-title="Atividades" ng-controller="ActivityController as vm">
+	<ion-header-bar class="bar-purple">
+		<ion-nav-bar class="bar-purple">
+
+			<ion-nav-back-button class="button-clear">
+				<i class="ion-ios-arrow-back"></i> Voltar
+			</ion-nav-back-button>
+
+			<h1 class="title">Atividades</h1>
+
+			<ion-nav-buttons side="right">
+				<a href="javascript:;" class="button button-purple" ng-click="vm.infoDone()" ng-disabled="vm.checkButtonChildren()">Avisar</a>
+			</ion-nav-buttons>
+		</ion-nav-bar>
+	</ion-header-bar>
+
+
+	<ion-content>
+		<ion-refresher on-refresh="vm.updateData()"></ion-refresher>
+		<ion-list>
+			<ion-item class="item-divider">
+				Para fazer hoje - 27/09/2016
+			</ion-item>
+
+			<ion-checkbox ng-model="activity.selected" ng-repeat="activity in vm.actitityDayChildrenList" ng-class="{'list-selected': activity.selected}"
+				href="#/app/activities/{{activity.id}}">
+				<div>{{activity.title}}</div>
+
+				<span class="badge badge-positive">
+          + {{activity.when_done}}
+        </span>
+			</ion-checkbox>
+
+			<ion-item class="item-divider">
+				Para fazer at&#233; o final da semana
+			</ion-item>
+
+			<ion-checkbox ng-model="activity.selected" ng-repeat="activity in vm.actitityWeekChildrenList" ng-class="{'list-selected': activity.selected}"
+				href="#/app/activities/{{activity.id}}">
+				<div>{{activity.title}}</div>
+
+				<span class="badge badge-positive">
+          + {{activity.when_done}}
+        </span>
+			</ion-checkbox>
+
+		</ion-list>
+
+		<div class="mb10 text-center mt30">
+			<a href="javascript:;" ng-disabled="vm.checkButtonChildren()" ng-click="vm.infoDone()" class="button button-big button-positive">Avisar para mam&#227;e</a>
+		</div>
+
+	</ion-content>
+	</ion-pane>
+</ion-view>ß

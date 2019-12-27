@@ -1,0 +1,13 @@
+{
+  "name": "Taskids",
+  "app_id": "",
+  "gulpStartupTasks": [
+    "sass",
+    "watch"
+  ],
+  "watchPatterns": [
+    "scss/**/*",
+    "www/**/*",
+    "!www/lib/**/*"
+  ]
+}

@@ -1,0 +1,20 @@
+a{text-decoration:none}.pane{background-color:#f7f7f7}.logo-init{width:46%;max-width:220px}.area-logo-init{margin-top:60px;margin-bottom:20px;text-align:center}.area-logo-cad{margin-top:30px;margin-bottom:10px;text-align:center}.area-form-init{margin-top:40px}.button.button-border{border-color:#387ef5;background-color:#fff;color:#387ef5}.round-top{border-top-left-radius:4px;border-top-right-radius:4px}.round-bottom{border-bottom-left-radius:4px;border-bottom-right-radius:4px}.round{border-top-left-radius:4px;border-top-right-radius:4px;border-bottom-left-radius:4px;border-bottom-right-radius:4px}.label-checkbox{font-size:14px;color:#666}.button.button-big{width:85%;max-width:380px}.list-form-login{width:85%;max-width:380px;margin:auto}.area-main-text{background:#E51A89;display:block;padding:12px;padding-bottom:16px;text-align:center}.area-main-text *{color:#fff;margin-bottom:0}.bar-purple{background:#E51A89;color:#fff}.bar-purple *{color:#fff}.bar-purple .title{color:#fff}.area-purple{background:#E51A89;color:#fff}.area-purple *{color:#fff}.area-lead-text{background:#387ef5;color:#fff;padding:6px;text-align:left;padding-left:16px}.badge.badge-purple{background-color:#e51a89;color:#fff}.button-purple{background-color:#d51e7f}.button-purple:active,.button-purple::focus{background-color:#cd1b79;color:#fff}.badge.badge-disabled{background-color:#d7d7d7;color:gray}.item-reward{padding:2px;text-align:center;color:#fff;font-size:75%}.item-minus{background-color:red}.item-partial{background-color:orange}.item-plus{background-color:green}.color-minus{color:red}.color-partial{color:orange}.color-plus{color:green}.info-gray{color:#999;font-size:80%}.list-selected{background-color:#feddef}.mt10{margin-top:10px}.mt20{margin-top:20px}.mt30{margin-top:30px}.mb10{margin-bottom:10px}.mb20{margin-bottom:20px}.mb30{margin-bottom:30px}.list .item.item-accordion{line-height:38px;padding-top:0;padding-bottom:0;transition:0.09s all linear}.list .item.item-accordion.ng-hide{line-height:0px}.list .item.item-accordion.ng-hide-add,.list .item.item-accordion.ng-hide-remove{display:block !important}
+
+
+.area-image-children-home {
+  background-color: #fff;
+  text-align: center;
+  padding-top: 5%;
+}
+
+.area-image-children-home img {
+  width: 90%;
+}
+
+.pt10 { padding-top: 10px; }
+.pt20 { padding-top: 20px; }
+.pt30 { padding-top: 30px; }
+
+.pb10 { padding-bottom: 10px; }
+.pb20 { padding-bottom: 20px; }
+.pb30 { padding-bottom: 30px; }

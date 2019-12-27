@@ -1,0 +1,76 @@
+<ion-view view-title="Atividade" ng-controller="ActivityController as vm">
+   
+  <ion-header-bar class="bar-purple">
+    <ion-nav-bar class="bar-purple">
+      <ion-nav-buttons side="left">
+        <a href="#/activities/adm" class="button button-purple">Cancelar</a>
+      </ion-nav-buttons>
+      <h1 class="title">Atividade</h1>
+      <ion-nav-buttons side="right">
+        <a href="#/activities/adm" class="button button-purple">Salvar</a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+  </ion-header-bar>
+
+  <ion-pane>
+    <ion-content>
+      
+      <div class="area-lead-text">
+        <i class="icon ion-alert padding-right"></i>
+        Todos os dados s&#227;o obrigat&#243;rios
+      </div>
+        
+        <form>
+            <div class="list mb20 text-center">
+                
+                <label class="item item-divider">
+                  Nome
+                </label>
+
+                <label class="item item-input">
+                    <input type="text" placeholder="Nome da Atividade" ng-model="vm.activity.title">
+                </label>
+
+                <label class="item item-divider">
+                  Pontua&#231;&#227;o
+                </label>
+
+                <label class="item item-input item-select">
+                  <div class="input-label text-left">Fez</div>
+                  <select>
+                    <option ng-repeat="item in vm.rangeList">{{item}}</option>
+                  </select>
+                </label>
+                
+                <label class="item item-input item-select">
+                  <div class="input-label text-left">Esqueceu</div>
+                  <select>
+                    <option ng-repeat="item in vm.rangeList">{{item}}</option>
+                  </select>
+                </label>
+
+                <label class="item item-input item-select">
+                  <div class="input-label text-left">N&#227;o Fez</div>
+                  <select>
+                    <option ng-repeat="item in vm.rangeList">{{item}}</option>
+                  </select>
+                </label>
+
+                <label class="item item-input item-select">
+                  <div class="input-label text-left">N&#227;o Fez Direito</div>
+                  <select>
+                    <option ng-repeat="item in vm.rangeList">{{item}}</option>
+                  </select>
+                </label>
+
+                <label class="item item-divider">
+                  Situa&#231;&#227;o
+                </label>
+
+                <ion-toggle ng-model="vm.activity.status" class="text-left" toggle-class="toggle-positive">Dispon&#237;vel no Sistema</ion-toggle>
+            </div>
+            
+        </form>  
+    </ion-content>
+  </ion-pane>
+</ion-view>  

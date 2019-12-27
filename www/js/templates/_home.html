@@ -1,0 +1,23 @@
+<ion-view view-title="Atividades" ng-controller="ChildrenController as vm">
+	<ion-header-bar class="bar-purple">
+		<h1 class="title">Bem-vindo</h1>
+	</ion-header-bar>
+	<ion-content>
+		<div class="area-image-children-home">
+			<img src="img/Stick-Figure-Children.svg" />
+		</div>
+
+		<div class="area-lead-text pt10 pb10">
+			<h4 class="stable">Selecione qual filho quer acompanhar ou deixar logado neste aparelho</h4>
+		</div>
+
+		<ion-list>
+			<ion-radio ng-model="choice" ng-value="{{child.id}}" ng-click="vm.setChild(child)" ng-repeat="child in vm.childrenList">{{child.name}}</ion-radio>
+		</ion-list>
+
+ 		<div class="button-bar padding mt10">
+			<a href="#/activities" ng-disabled="vm.childrenId == null" class="button button-big button-positive">Deixar logado</a>
+			<a href="#/activities" ng-disabled="vm.childrenId == null" class="button button-big button-outline button-positive">Consultar</a>
+		</div>
+	</ion-content>
+</ion-view>

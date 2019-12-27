@@ -1,0 +1,29 @@
+<ion-view view-title="D&#250;vidas Frequentes" ng-controller="FaqController as vm">
+  <ion-header-bar>
+        <ion-nav-bar class="bar-purple">
+            <ion-nav-back-button class="button-clear">
+                <i class="ion-ios-arrow-back"></i> Voltar
+            </ion-nav-back-button>
+        </ion-nav-bar>
+    </ion-header-bar>
+    <ion-content>
+        <ion-refresher on-refresh="vm.updateData()"></ion-refresher>
+        <ion-list>
+        <div ng-repeat="group in groups">
+          <ion-item class="item-stable"
+                    ng-click="toggleGroup(group)"
+                    ng-class="{active: isGroupShown(group)}">
+              <i class="icon" ng-class="isGroupShown(group) ? 'ion-minus' : 'ion-plus'"></i>
+            &nbsp;
+            D&#250;vida {{group.name}}
+          </ion-item>
+          <ion-item class="item-accordion"
+                    ng-repeat="item in group.items"
+                    ng-show="isGroupShown(group)">
+            Resposta {{item}}
+          </ion-item>
+        </div>
+      </ion-list>        
+
+    </ion-content>
+</ion-view>

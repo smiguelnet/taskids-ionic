@@ -1,0 +1,70 @@
+<ion-view view-title="Recompensas" ng-controller="RewardController as vm">
+
+  <ion-header-bar class="bar-purple">
+    <ion-nav-bar class="bar-purple">
+      
+      <ion-nav-back-button class="button-clear">
+          <i class="ion-ios-arrow-back"></i> Voltar
+      </ion-nav-back-button>
+
+      <h1 class="title">Recompensas</h1>
+
+      <ion-nav-buttons side="right">
+        <a  href="javascript:;" 
+            class="button button-purple"
+            ng-click="vm.requestReward()" 
+            ng-disabled="vm.checkButtonChildren()">Pedir</a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+  </ion-header-bar>
+
+
+
+    <ion-content>
+      <div class="area-lead-text">
+        <i class="icon ion-trophy padding-right"></i>
+        Saldo de <strong>{{vm.balanceTotal}}</strong> pontos
+      </div>
+      <!-- UPDATE DATA -->
+      <ion-refresher on-refresh="vm.updateData()"></ion-refresher>
+      <ion-list>
+          <ion-item class="item-divider">
+              No final de semana
+          </ion-item>
+
+        <ion-checkbox ng-model="reward.selected" 
+                      ng-repeat="reward in vm.rewardChildrenList | filter: {weekend : true}"
+                      ng-class="{'list-selected': reward.selected}"
+                      ng-click="vm.setBalance(reward.price, reward.selected)"
+                      ng-disabled="{{vm.balanceTotal < reward.price}}">
+          <div>{{reward.title}}</div>
+          <span class="badge"
+                ng-class="{'badge-purple': vm.balanceTotal >= reward.price, 'badge-disabled': vm.balanceTotal < reward.price}">
+              {{reward.price}}
+          </span>
+        </ion-checkbox>
+
+        <ion-item class="item-divider">
+            Durante a semana
+        </ion-item>
+
+        <ion-checkbox ng-model="reward.selected" 
+                      ng-repeat="reward in vm.rewardChildrenList | filter: {weekend : false}"
+                      ng-class="{'list-selected': reward.selected}"
+                      ng-click="vm.setBalance(reward.price, reward.selected)"
+                      ng-disabled="{{vm.balanceTotal < reward.price}}">
+          <div>{{reward.title}}</div>
+          <span class="badge"
+                ng-class="{'badge-purple': vm.balanceTotal >= reward.price, 'badge-disabled': vm.balanceTotal < reward.price}">
+              {{reward.price}}
+          </span>
+        </ion-checkbox>
+      </ion-list>
+
+      <div class="mb10 text-center mt30">
+        <a href="javascript:;" ng-click="vm.requestReward()" ng-disabled="vm.checkButtonChildren()" class="button button-big button-positive">Pedir para mam&#227;e</a>
+      </div>
+
+    </ion-content>
+
+</ion-view>

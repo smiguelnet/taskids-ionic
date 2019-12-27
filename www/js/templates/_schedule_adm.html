@@ -1,0 +1,60 @@
+<ion-view view-title="Programa&#231;&#227;o" ng-controller="ScheduleController as vm">
+
+    <ion-header-bar class="bar-purple">
+        <ion-nav-bar class="bar-purple">
+            <ion-nav-back-button class="button-clear">
+                <i class="ion-ios-arrow-back"></i> Voltar
+            </ion-nav-back-button>
+            <h1 class="title">Programa&#231;&#227;o</h1>
+            <ion-nav-buttons side="right">
+                <a href="#/schedule/adm/1" class="button button-purple">Nova</a>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+    </ion-header-bar>
+
+    <ion-content>
+		<div class="area-lead-text">
+			<i class="icon ion-calendar padding-right"></i>
+			<span>6 atividade(s) cadastrada(s)</span>
+		</div>
+
+		<div class="bar item-input-inset mb20 mt20">
+			<label class="item-input">
+			<i class="icon ion-search placeholder-icon"></i>
+			<input type="search" placeholder="Pesquisar">
+			</label>
+		</div>
+
+        <label class="item item-divider">
+            Pontuais
+        </label>
+
+		<ion-list show-delete="vm.admDelete" show-reorder="false" can-swipe="true">
+			<ion-item ng-repeat="activity in vm.actitityList" class="item-icon-right">
+				<a ng-href="#/schedule/adm/{{activity.id}}">
+					<h2 class="positive">{{activity.title}}</h2>
+					<p>Cadastrado em 09/10/2016</p>
+					<ion-option-button class="button-assertive" ng-click="vm.actitityList.splice($index, 1)">Remover</ion-option-button>
+					<i class="icon ion-ios-arrow-right pull-right"></i>
+				</a>
+			</ion-item>
+		</ion-list>
+
+        <label class="item item-divider">
+            Recorrentes
+        </label>
+
+		<ion-list show-delete="vm.admDelete" show-reorder="false" can-swipe="true">
+			<ion-item ng-repeat="activity in vm.actitityList" class="item-icon-right">
+				<a ng-href="#/schedule/adm/{{activity.id}}">
+					<h2 class="positive">{{activity.title}}</h2>
+					<p>Cadastrado em 09/10/2016</p>
+					<ion-option-button class="button-assertive" ng-click="vm.actitityList.splice($index, 1)">Remover</ion-option-button>
+					<i class="icon ion-ios-arrow-right pull-right"></i>
+				</a>
+			</ion-item>
+		</ion-list>
+
+	</ion-content>
+
+</ion-view>

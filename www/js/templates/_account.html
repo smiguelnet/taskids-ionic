@@ -1,0 +1,61 @@
+<ion-view view-title="Realizar Cadastro">
+  <ion-header-bar>
+        <ion-nav-bar class="bar-purple">
+            <ion-nav-back-button class="button-clear">
+                <i class="ion-ios-arrow-back"></i> Voltar
+            </ion-nav-back-button>
+        </ion-nav-bar>
+    </ion-header-bar>
+    <ion-content>
+
+        <div class="area-logo-cad">
+            <img src="img/logo.svg" class="logo-init" onerror="this.onerror=null; this.src='logo.png'">
+        </div>
+
+        <form>
+            <div class="area-form-init text-center">
+
+                <div class="list list-form-login mb10">
+                    <label class="item item-input round-top">
+                        <i class="icon ion-person placeholder-icon positive"></i>
+                        <input type="text" placeholder="Nome">
+                    </label>
+
+                    <label class="item item-input round-bottom">
+                        <i class="icon ion-email placeholder-icon positive"></i>
+                        <input type="email" placeholder="E-mail" class="email">
+                    </label>
+                </div>
+
+                <div class="list list-form-login mb10">
+                    <label class="item item-input round-top">
+                        <i class="icon ion-locked placeholder-icon positive"></i>
+                        <input type="password" placeholder="Senha" class="password">
+                    </label>
+                    <label class="item item-input round-bottom">
+                        <i class="icon ion-locked placeholder-icon positive"></i>
+                        <input type="password" placeholder="Confirmacao" class="password">
+                    </label>
+                </div>
+
+                <div class="list list-form-login mb10">
+                    <label for="chkTermosCondicoesUso" class="item round label-checkbox">
+                        <input type="checkbox" id="chkTermosCondicoesUso" class="checkbox" />
+                        Aceito os <a href="#/terms">termos e condições de uso</a>
+                    </label>
+                </div>
+
+                <div class="mb10">
+                    <a href="#/home" class="button button-big button-positive">Cadastrar</a>
+                </div>
+
+            </div>
+        </form>
+
+    </ion-content>
+
+    <div class="bar bar-footer area-main-text padding">
+        <span>Ja possui cadastro?</span>
+        <a href="#/init" class="padding-left"><strong>Autenticar</strong></a>
+    </div>
+</ion-view>

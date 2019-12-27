@@ -1,0 +1,81 @@
+<ion-view view-title="Programa&#231;&#227;o" ng-controller="ScheduleController as vm">
+   
+  <ion-header-bar class="bar-purple">
+    <ion-nav-bar class="bar-purple">
+      <ion-nav-buttons side="left">
+        <a href="#/schedule/adm" class="button button-purple">Cancelar</a>
+      </ion-nav-buttons>
+      <h1 class="title">Programa&#231;&#227;o</h1>
+      <ion-nav-buttons side="right">
+        <a href="#/schedule/adm" class="button button-purple">Salvar</a>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+  </ion-header-bar>
+
+  <ion-pane>
+    <ion-content>
+      
+      <div class="area-lead-text">
+        <i class="icon ion-alert padding-right"></i>
+        Todos os dados s&#227;o obrigat&#243;rios
+      </div>
+        
+        <form>
+            <div class="list mb20 text-center">
+                
+                <label class="item item-input item-select">
+                  <div class="input-label text-left">Atividade</div>
+                  <select>
+                    <option ng-repeat="activity in vm.actitityList">{{activity.title}}</option>
+                  </select>
+                </label>
+
+                <label class="item item-input item-select">
+                  <div class="input-label text-left">Filho</div>
+                  <select>
+                    <option ng-repeat="child in vm.childrenList">{{child.name}}</option>
+                  </select>
+                </label>
+
+                <label class="item item-input item-select">
+                  <div class="input-label text-left">Tipo</div>
+                  <select ng-model="vm.type">
+                    <option value="0">Selecione</option>
+                    <option value="1">Pontual</option>
+                    <option value="2">Recorrente</option>
+                  </select>
+                </label>
+
+                <label class="item item-input item-select" ng-show="vm.type == 1">
+                  <div class="input-label text-left">Quando</div>
+                  <input type="date" />
+                </label>
+
+                <label class="item item-input item-select" ng-show="vm.type == 2">
+                  <div class="input-label text-left">Quando</div>
+                  <select ng-model="vm.subType">
+                    <option value="0">Selecione</option>
+                    <option value="1">Todos os dias</option>
+                    <option value="2">Durante a Semana (SEG-SEX)</option>
+                    <option value="3">Aos Finais de Semana</option>
+                    <option value="4">Toda Segunda-feira</option>
+                    <option value="5">Toda Ter&#231;a-feira</option>
+                    <option value="6">Toda Quarta-feira</option>
+                    <option value="7">Toda Quinta-feira</option>
+                    <option value="8">Toda Sexta-feira</option>
+                    <option value="9">Todo S&#225;bado</option>
+                    <option value="10">Todo Domingo</option>
+                  </select>
+                </label>
+                
+                <label class="item item-divider">
+                  Situa&#231;&#227;o
+                </label>
+
+                <ion-toggle ng-model="vm.activity.status" class="text-left" toggle-class="toggle-positive">Dispon&#237;vel no Sistema</ion-toggle>
+            </div>
+            
+        </form>  
+    </ion-content>
+  </ion-pane>
+</ion-view>  

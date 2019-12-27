@@ -1,0 +1,53 @@
+<ion-view view-title="Meus Pontos" ng-controller="BalanceController as vm">
+  <ion-pane>
+    <ion-header-bar class="bar-purple">
+        <h1 class="title">Meus Pontos: <strong>{{vm.balanceTotal}}</strong></h1>
+    </ion-header-bar>
+    <ion-content>
+      <div class="area-lead-text">
+        <i class="icon ion-calendar padding-right"></i>
+        <span>Acompanhamento das conquistas</span>
+      </div>
+      <!-- UPDATE DATA -->
+      <ion-refresher on-refresh="vm.updateData()"></ion-refresher>
+      <!-- TODAY -->
+      <ion-list class="padding-top">
+        <ion-item class="item-divider">
+          Hoje - 27/09/2016
+        </ion-item>
+        <ion-item class="" ng-repeat="balance in vm.balanceToday">
+          {{balance.title}}
+          <span class="badge" ng-class="{'badge-positive': balance.done, 'badge-assertive': !balance.done }">
+                  {{balance.done == true ? '+' : '-' }}
+                  {{balance.done == true ? balance.when_done : balance.when_gone}}
+              </span>
+        </ion-item>
+        <!-- YESTERDAY -->
+        <ion-item class="item-divider">
+          Ontem - 26/09/2016
+        </ion-item>
+        <ion-item class="" ng-repeat="balance in vm.balanceToday">
+          {{balance.title}}
+          <span class="badge" ng-class="{'badge-positive': balance.done, 'badge-assertive': !balance.done }">
+                  {{balance.done == true ? '+' : '-' }}
+                  {{balance.done == true ? balance.when_done : balance.when_gone}}
+              </span>
+        </ion-item>
+      </ion-list>
+      <!-- LAST WEEK -->
+      <ion-item class="item-divider">
+          Semana passada
+        </ion-item>
+        <ion-item class="" ng-repeat="balance in vm.balancePast">
+          {{balance.title}}
+          <span class="badge" ng-class="{'badge-positive': balance.done, 'badge-assertive': !balance.done }">
+                  {{balance.done == true ? '+' : '-' }}
+                  {{balance.done == true ? balance.when_done : balance.when_gone}}
+              </span>
+        </ion-item>
+      </ion-list>
+      <!-- LOAD MORE -->
+      <ion-infinite-scroll on-infinite="vm.loadMore()" distance="1%"></ion-infinite-scroll>
+    </ion-content>
+  </ion-pane>
+</ion-view>
